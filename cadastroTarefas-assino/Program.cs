@@ -1,3 +1,6 @@
+using cadastroTarefas_assino.Data;
+using Microsoft.EntityFrameworkCore;
+
 namespace cadastroTarefas_assino
 {
     public class Program
@@ -5,8 +8,10 @@ namespace cadastroTarefas_assino
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
+            
+            builder.Services.AddDbContext<BancoContext>(opt => 
+            opt.UseSqlServer(builder.Configuration.GetConnectionString("DataBase")));
 
-            // Add services to the container.
             builder.Services.AddControllersWithViews();
 
             var app = builder.Build();
