@@ -1,4 +1,5 @@
-﻿@{
+﻿@model List<TarefaModel>
+@{
     ViewData["Title"] = "Listagem de Tarefas";
 }
 
@@ -22,42 +23,24 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <th scope="row">1</th>
-                <td>Tarefa1</td>
-                <td>Escrever Texto</td>
-                <td>09/11/2022</td>
-                <td>
-                    <div class="btn-group" role="group">
-                        <a role="button" class="btn btn-primary" asp-controller="Tarefa" asp-action="Editar"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Editar</font></font></a>
-                        <a role="button" class="btn btn-danger" asp-controller="Tarefa" asp-action="DeletarConfirmacao"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Deletar</font></font></a>
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <th scope="row">2</th>
-                <td>Tarefa2</td>
-                <td>Escrever Texto2</td>
-                <td>10/11/2022</td>
-                <td>
-                    <div class="btn-group" role="group">
-                        <a role="button" class="btn btn-primary" asp-controller="Tarefa" asp-action="Editar"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Editar</font></font></a>
-                        <a role="button" class="btn btn-danger" asp-controller="Tarefa" asp-action="DeletarConfirmacao"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Deletar</font></font></a>
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <th scope="row">3</th>
-                <td>Tarefa3</td>
-                <td>Escrever Texto3</td>
-                <td>11/11/2022</td>
-                <td>
-                    <div class="btn-group" role="group">
-                        <a role="button" class="btn btn-primary" asp-controller="Tarefa" asp-action="Editar"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Editar</font></font></a>
-                        <a role="button" class="btn btn-danger" asp-controller="Tarefa" asp-action="DeletarConfirmacao"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Deletar</font></font></a>
-                    </div>
-                </td>
-            </tr>
+           @if(Model != null && Model.Any())
+            {
+                foreach(TarefaModel tarefa in Model)
+                {
+                    <tr>
+                        <th scope="row">@tarefa.id</th>
+                        <td>@tarefa.titulo</td>
+                        <td>@tarefa.descricao</td>
+                        <td>@tarefa.dataFinalizacao</td>
+                        <td>
+                            <div class="btn-group" role="group">
+                                <a role="button" class="btn btn-primary" asp-route-id="@tarefa.id" asp-controller="Tarefa" asp-action="Editar"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Editar</font></font></a>
+                                <a role="button" class="btn btn-danger" asp-route-id="@tarefa.id" asp-controller="Tarefa" asp-action="DeletarConfirmacao"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Deletar</font></font></a>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            }
         </tbody>
     </table>
 </div>

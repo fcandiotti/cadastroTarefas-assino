@@ -1,4 +1,5 @@
 using cadastroTarefas_assino.Data;
+using cadastroTarefas_assino.Repository;
 using Microsoft.EntityFrameworkCore;
 
 namespace cadastroTarefas_assino
@@ -11,6 +12,7 @@ namespace cadastroTarefas_assino
             
             builder.Services.AddDbContext<BancoContext>(opt => 
             opt.UseSqlServer(builder.Configuration.GetConnectionString("DataBase")));
+            builder.Services.AddScoped<ITarefaRepository, TarefaRepository>();
 
             builder.Services.AddControllersWithViews();
 
