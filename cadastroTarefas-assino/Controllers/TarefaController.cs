@@ -21,19 +21,34 @@ namespace cadastroTarefas_assino.Controllers
         {
             return View();
         }
-        public IActionResult Editar()
+        public IActionResult Editar(int id)
         {
-            return View();
+            TarefaModel tarefa = _tarefaRepository.listarPorId(id);
+            return View(tarefa);
         }
-        public IActionResult DeletarConfirmacao()
+        public IActionResult DeletarConfirmacao(int id)
         {
-            return View();
+            TarefaModel tarefa = _tarefaRepository.listarPorId(id);
+            return View(tarefa);
+        }
+
+        public IActionResult Deletar(int id)
+        {
+            _tarefaRepository.Deletar(id);
+            return RedirectToAction("Index");
         }
 
         [HttpPost]
         public IActionResult Criar(TarefaModel tarefa)
         {
             _tarefaRepository.Criar(tarefa);
+            return RedirectToAction("Index");
+        }
+
+        [HttpPost]
+        public IActionResult Atualizar(TarefaModel tarefa)
+        {
+            _tarefaRepository.Atualizar(tarefa);
             return RedirectToAction("Index");
         }
     }

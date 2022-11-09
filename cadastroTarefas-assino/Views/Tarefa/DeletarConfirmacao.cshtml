@@ -1,12 +1,13 @@
-﻿@{
+﻿@model TarefaModel
+@{
     ViewData["Title"] = "Confirmação de Deletar Tarefa";
 }
 
 <div class="text-center">
-    <h3>Deseja Deletar a Tarefa (tarefa)</h3>
+    <h3>Deseja Deletar a Tarefa (@Model.titulo)</h3>
 </div>
 
 <div class="d-grid gap-2">
     <a class="btn btn-primary" role="button" asp-controller="Tarefa" asp-action="Index">Cancelar Exclusão</a>
-    <a class="btn btn-danger" role="button" asp-controller="Tarefa" asp-action="Deletar">Confirmar Exclusão</a>
+    <a class="btn btn-danger" role="button" asp-controller="Tarefa" asp-route-id="@Model.id" asp-action="Deletar">Confirmar Exclusão</a>
 </div>
