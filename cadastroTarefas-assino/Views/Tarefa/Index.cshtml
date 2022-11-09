@@ -1,0 +1,63 @@
+﻿@{
+    ViewData["Title"] = "Listagem de Tarefas";
+}
+
+<div class="text-center">
+
+    <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+        <a class="btn btn-primary role="button" asp-controller="Tarefa" asp-action="Criar">Adicionar nova Tarefa</a>
+    </div>
+    <br />
+
+    <h1 class="display-4">Lista de Tarefas</h1>
+
+    <table class="table table-striped table-hover">
+        <thead class="table-dark">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Tarefa</th>
+                <th scope="col">Descrição</th>
+                <th scope="col">Data Finalização</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">1</th>
+                <td>Tarefa1</td>
+                <td>Escrever Texto</td>
+                <td>09/11/2022</td>
+                <td>
+                    <div class="btn-group" role="group">
+                        <a role="button" class="btn btn-primary" asp-controller="Tarefa" asp-action="Editar"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Editar</font></font></a>
+                        <a role="button" class="btn btn-danger" asp-controller="Tarefa" asp-action="DeletarConfirmacao"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Deletar</font></font></a>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">2</th>
+                <td>Tarefa2</td>
+                <td>Escrever Texto2</td>
+                <td>10/11/2022</td>
+                <td>
+                    <div class="btn-group" role="group">
+                        <a role="button" class="btn btn-primary" asp-controller="Tarefa" asp-action="Editar"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Editar</font></font></a>
+                        <a role="button" class="btn btn-danger" asp-controller="Tarefa" asp-action="DeletarConfirmacao"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Deletar</font></font></a>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">3</th>
+                <td>Tarefa3</td>
+                <td>Escrever Texto3</td>
+                <td>11/11/2022</td>
+                <td>
+                    <div class="btn-group" role="group">
+                        <a role="button" class="btn btn-primary" asp-controller="Tarefa" asp-action="Editar"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Editar</font></font></a>
+                        <a role="button" class="btn btn-danger" asp-controller="Tarefa" asp-action="DeletarConfirmacao"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Deletar</font></font></a>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
