@@ -1,4 +1,6 @@
-﻿namespace cadastroTarefas_assino.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace cadastroTarefas_assino.Models
 {
     public class TarefaModel
     {
@@ -6,6 +8,5 @@
         public string? titulo { get; set; }
         public string? descricao { get; set; }
         public DateTime? dataFinalizacao { get; set; }
-
     }
 }

@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace cadastroTarefasassino.Migrations
 {
     /// <inheritdoc />
-    public partial class CriandoTabelaTarefas : Migration
+    public partial class CriaTabela : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

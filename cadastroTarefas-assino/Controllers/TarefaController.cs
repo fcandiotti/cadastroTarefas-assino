@@ -41,8 +41,8 @@ namespace cadastroTarefas_assino.Controllers
         [HttpPost]
         public IActionResult Criar(TarefaModel tarefa)
         {
-            _tarefaRepository.Criar(tarefa);
-            return RedirectToAction("Index");
+                _tarefaRepository.Criar(tarefa);
+                return RedirectToAction("Index");
         }
 
         [HttpPost]

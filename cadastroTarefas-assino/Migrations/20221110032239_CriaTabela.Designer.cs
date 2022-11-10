@@ -12,8 +12,8 @@ using cadastroTarefas_assino.Data;
 namespace cadastroTarefasassino.Migrations
 {
     [DbContext(typeof(BancoContext))]
-    [Migration("20221109204314_CriandoTabelaTarefas")]
-    partial class CriandoTabelaTarefas
+    [Migration("20221110032239_CriaTabela")]
+    partial class CriaTabela
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
