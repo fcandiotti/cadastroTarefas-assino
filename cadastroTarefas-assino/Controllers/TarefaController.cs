@@ -41,8 +41,17 @@ namespace cadastroTarefas_assino.Controllers
         [HttpPost]
         public IActionResult Criar(TarefaModel tarefa)
         {
+            try
+            {
                 _tarefaRepository.Criar(tarefa);
+                TempData["MensagemSucesso"] = "Tarefa Registrada com Sucesso!";
                 return RedirectToAction("Index");
+            }
+            catch (System.Exception erro)
+            {
+                TempData["MensagemError"] = $"Não conseguimos registrar sua tarefa, tente novamente: {erro.Message}";
+                return RedirectToAction("Index");
+            }
         }
 
         [HttpPost]

@@ -12,8 +12,8 @@ namespace cadastroTarefas_assino.Controllers
 
             HomeModel home = new HomeModel
             {
-                nome = "Fernando",
-                email = "fernando@assino.com.br"
+                nome = "Professor X",
+                email = "professorX@assino.com.br"
             };
 
             return View(home);

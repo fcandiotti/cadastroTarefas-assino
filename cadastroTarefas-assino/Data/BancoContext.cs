@@ -9,6 +9,6 @@ namespace cadastroTarefas_assino.Data
         {
         }
 
-        public DbSet<TarefaModel> Tarefas { get; set; } 
+        public DbSet<TarefaModel> Tarefas { get; set; }
     }
 }

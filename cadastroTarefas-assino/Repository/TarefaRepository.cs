@@ -23,11 +23,11 @@ namespace cadastroTarefas_assino.Repository
 
         public TarefaModel Criar(TarefaModel tarefa)
         {
+            if (tarefa.titulo == null) throw new System.Exception("O campo titulo é obrigatorio!");
             _bancoContext.Tarefas.Add(tarefa);
             _bancoContext.SaveChanges();
             return tarefa;
         }
-
         public TarefaModel Atualizar(TarefaModel tarefa)
         {
             TarefaModel tarefaAntiga = listarPorId(tarefa.id);

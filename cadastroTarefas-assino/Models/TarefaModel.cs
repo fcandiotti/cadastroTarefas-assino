@@ -1,6 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
-
-namespace cadastroTarefas_assino.Models
+﻿namespace cadastroTarefas_assino.Models
 {
     public class TarefaModel
     {
